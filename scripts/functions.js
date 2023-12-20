@@ -18,3 +18,9 @@ export const tableBuilder=(data,headerTemplate,rowTemplate)=>{
     table+=dataTemplate(rows);
     return table;
 }
+
+export const getTemplate=async (route)=>{
+    const fetchPromise=await fetch(route);
+    const template=await fetchPromise.text();
+    return template;
+}
